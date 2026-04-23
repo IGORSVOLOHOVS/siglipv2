@@ -48,6 +48,3 @@ python classify_siglip.py
 The project follows a modular protocol-based design:
 - `SigLIPClassifier`: The core engine handling model loading and image processing.
 - `Classifier Protocol`: Ensures future-proofing for alternative classification backends.
-
-## ⚖️ License
-MIT License. See [LICENSE](LICENSE) for details.
