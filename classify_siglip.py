@@ -73,7 +73,7 @@ def main() -> None:
         console.print(f"[bold green]Predicted index: {index}[/bold green]")
         console.print(f"[bold green]Predicted label: {candidate_labels[index]}[/bold green]")
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - boundary handler: the error is reported, not swallowed
         logger.error(f"An error occurred: {e}")
 
 
