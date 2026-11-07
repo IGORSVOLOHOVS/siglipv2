@@ -1,50 +1,17 @@
-# 🏎️ SigLIPv2 Image Classifier
+# siglipv2
 
-A professional, zero-shot image classification pipeline powered by **SigLIP 2** (`google/siglip2-base-patch16-224`). This project demonstrates high-performance visual-text alignment for open-vocabulary classification tasks.
+A console script that classifies an image zero-shot: it scores the image against a list of text labels with Google's SigLIP 2 (`google/siglip2-base-patch16-224`) and prints the label that fits best. Nothing is trained.
 
-## 🌟 Features
+`classify_siglip.py` holds all of it. `SigLIPClassifier` loads the model and its processor, on CUDA when there is one and on the CPU otherwise, turns each label into the prompt `This is a photo of <label>.`, and returns the index of the highest score. `main()` classifies `data/image.png` against `a car`, `a bicycle` and `a truck`.
 
-- **Zero-Shot Classification**: Classify images using natural language prompts without retraining.
-- **SigLIPv2 Core**: Utilizes the latest SigLIPv2 architecture for superior alignment scores.
-- **Hardware Optimized**: Automatic detection and utilization of CUDA for high-speed inference.
-- **Rich Terminal UI**: Beautifully formatted terminal output for enhanced observability.
+## Use
 
-## 🎞️ Demo
-
-### Input Image
-![Input Image](data/image.png)
-
-### Execution Logs
 ```powershell
-INFO: Loading model google/siglip2-base-patch16-224 on cuda...
-INFO: HTTP Request: HEAD https://huggingface.co/google/siglip2-base-patch16-224/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/siglip2-base-patch16-224/75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2/config.json "HTTP/1.1 200 OK"
-Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 408/408 [00:00<00:00, 9494.32it/s]
-INFO: Classifying data/image.png
-Predicted index: 0
-Predicted label: a car
+.\recipe.ps1 run
 ```
 
-## 🚀 Getting Started
+The image, the labels and the model are fixed in `main()`; the script takes no options. `docs/install.md` says what to install and `docs/manual.md` what a run prints. `.\recipe.ps1 test` runs the tests, mypy and ruff, with the model replaced: no test downloads weights.
 
-### Prerequisites
-- Python 3.10+
-- PyTorch with CUDA support (optional but recommended)
-- `transformers`, `pillow`, `rich`
+## Licence
 
-### Installation
-```bash
-pip install torch torchvision transformers pillow rich
-```
-
-### Usage
-Run the classifier on the default image:
-```bash
-python classify_siglip.py
-```
-
-## 🏗️ Architecture
-
-The project follows a modular protocol-based design:
-- `SigLIPClassifier`: The core engine handling model loading and image processing.
-- `Classifier Protocol`: Ensures future-proofing for alternative classification backends.
+MIT, see `LICENSE`.
