@@ -2,6 +2,22 @@
 
 Reverse-engineered on 2026-11-18 from the code at commit `bd514f2` (2026-11-08). It describes what the code does, not what it was meant to do. Each requirement names the line it was read from and the test that checks it, if any. The documentation hub is [`docs/README.md`](docs/README.md).
 
+<!-- jira-sync:start -->
+Jira: KAN-90
+
+## Tasks
+
+This list is one ticket in Jira project KAN, [KAN-90](https://igorsvolohovs.atlassian.net/browse/KAN-90). Each line is a checkbox there: tick it in Jira and the sync ticks it here; add a checkbox there and it is appended here. Done items are the features described in section 3; open items are what the project declares but the code does not do yet.
+
+- [x] Model loading (section 3.1) <!-- spec-model-loading -->
+- [x] Classification (section 3.2) <!-- spec-classification -->
+- [x] Console entry point (section 3.3) <!-- spec-console-entry-point -->
+- [x] Logging (section 3.4) <!-- spec-logging -->
+- [x] Packaging (section 3.5) <!-- spec-packaging -->
+- [ ] Alternative classification backends behind the `Classifier` protocol. (declared, not implemented) <!-- spec-alternative-classification-backends-behind-the-cla -->
+
+<!-- jira-sync:end -->
+
 ## 1. Purpose and scope
 
 The system classifies one image zero-shot against a list of text labels with the SigLIP 2 model `google/siglip2-base-patch16-224` and prints the best-scoring label (`classify_siglip.py:25-74`, `README.md:3`).
