@@ -212,3 +212,65 @@ Other constraints: uv is required but its version is not pinned (`recipe.ps1:16`
 9. What exceptions R-37, R-41 and R-42 (issues #9-#11) consist of; the repository files describe only R-02 and R-09 (`CLAUDE.md`), and the requirements document is linked at a loopback address (`README.md:21`).
 10. Whether `.agent/` (vendored agent kit, C++ and Python) is still wanted; nothing in `recipe.ps1` or the tests uses it. Partly answered: it was kept knowingly when the lab tooling came in - `pyproject.toml:54-57` calls it "vendored agent tooling" and excludes it from ruff, and coverage omits it (`pyproject.toml:82`).
 11. Whether `huggingface_hub`, imported by a test, should be a declared dependency.
+
+## Screenshots of requirements
+
+### FR-1 - The system shall load the model with AutoModel.frompretrained(modelname) and the processor with AutoProcessor.…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-2 - The system shall select the device cuda when torch.cuda.isavailable() returns true and cpu otherwise, and move…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-3 - The system shall turn every label, in the given order, into the prompt This is a photo of <label>
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-4 - The system shall open the image at imagepath with Pillow and convert it to RGB
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-5 - When the image file does not exist, the system shall log at ERROR Image not found: <path> and re-raise FileNot…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-6 - The system shall call the processor with text=<prompts>, images=<image>, padding="maxlength", returntensors="p…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-7 - The system shall run the model with gradient computation disabled
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-8 - The system shall return, as a Python int, the index of the maximum of logitsperimage along its last dimension
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-9 - main() shall classify data/image.png against the labels a car, a bicycle, a truck with the model google/siglip…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-10 - main() shall print Predicted index: <index> and Predicted label: <label> to standard output through a rich con…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-11 - When any Exception is raised while loading or classifying, main() shall log at ERROR An error occurred: <messa…
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-12 - The module shall call main() when it is executed as a script
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-13 - On import the module shall configure logging at level INFO with the format %(levelname)s: %(message)s
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-14 - The system shall log at INFO Loading model <name> on <device>... before loading and Classifying <path> before …
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
+
+### FR-15 - The build shall produce a wheel that contains the single module classifysiglip and not data/image.png
+
+> Screenshot skipped: the code does not run here - the project runs on PyTorch-class libraries and trained weights, and torch is not installed here (multi-gigabyte); requirements whose code does not need torch will be revisited in a later pass.
